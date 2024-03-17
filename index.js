@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-const validar = require("./middlewares/middleware");
+const validar = require("./middleware");
 
 app.listen(port, () =>
   console.log(`Example app listening on port http://localhost:${port}`)
