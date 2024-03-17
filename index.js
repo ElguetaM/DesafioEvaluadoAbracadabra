@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const fs = require("fs");
 
 const validar = require("./middlewares/middleware");
 
@@ -15,20 +14,9 @@ app.get("/abracadabra/usuarios", function (req, res) {
   res.sendFile(__dirname + "/usuarios.json");
 });
 
-//
-
-let user = JSON.parse(fs.readFileSync(__dirname + "/usuarios.json")).usuarios;
-
-app.get("/abracadabra/juego/:usuario", (req, res) => {
-  let usuario = req.params.usuario;
-  if (user.includes(usuario)) {
-    res.sendFile(__dirname + "/index.html");
-  } else {
-    res.sendfile(__dirname + "/assets/img/who.jpeg");
-  }
+app.get("/abracadabra/juego/:usuario", validar, (req, res) => {
+  res.sendFile(__dirname + "/index.html");
 });
-
-//
 
 app.get("/abracadabra/conejo/:n", (req, res) => {
   const numero = Math.floor(Math.random() * (4 - 1) + 1);
