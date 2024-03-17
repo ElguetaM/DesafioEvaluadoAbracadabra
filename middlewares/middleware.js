@@ -4,6 +4,11 @@ let validar = (req, res, next) => {
     fs.readFileSync("D:/Bootcamp/DesafioAbracadabra/usuarios.json")
   ).usuarios;
   let usuario = req.params.usuario;
+
+  usuario = usuario.toLowerCase().replace(/\b[a-z]/g, function (letter) {
+    return letter.toUpperCase();
+  });
+
   if (user.includes(usuario)) {
     next();
   } else {
