@@ -1,0 +1,15 @@
+{
+  "name": "desafioabracadabra",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "Viviana ELgueta",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.3"
+  }
+}
