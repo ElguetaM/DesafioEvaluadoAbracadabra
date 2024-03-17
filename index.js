@@ -19,7 +19,7 @@ app.get("/abracadabra/juego/:usuario", validar, (req, res) => {
 });
 
 app.get("/abracadabra/conejo/:n", (req, res) => {
-  const numero = Math.floor(Math.random() * (4 - 1) + 1);
+  const numero = Math.floor(Math.random() * (5 - 1) + 1);
   const n = req.params.n;
   n == numero
     ? res.sendFile(__dirname + "/assets/img/conejito.jpg")
